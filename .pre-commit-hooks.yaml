@@ -1,4 +1,4 @@
--   id: dockerlint
+-id: dockerlint
     name: Dockerfile lint with hadolint
     description: Dockerfile lint with hadolint
     entry: lint.sh

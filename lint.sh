@@ -14,15 +14,19 @@ if ! which hadolint &>/dev/null; then
             exit 1
         else
             >&2 echo "Installing using curl"
-            >&2 curl -o /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Darwin-x86_64
-            chmod -x /usr/local/bin/hadolint
+            >&2 curl -o ~/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Darwin-x86_64
+            chmod +x ~/hadolint
+            >&2 ~/hadolint "$@"
+            exit 0
         fi
     else
         >&2 echo "Installing using brew"
         brew install hadolint
+       
     fi
     
     
 fi
->&2 echo "Executing hadolint"
->&2 hadolint "$@"
+
+ >&2 echo "Executing hadolint"
+ >&2 hadolint "$@"
