@@ -21,11 +21,8 @@ if ! which hadolint &>/dev/null; then
         fi
     else
         >&2 echo "Installing using brew"
-        brew install hadolint
-       
+        brew install hadolint 
     fi
-    
-    
 fi
 
  >&2 echo "Executing hadolint"

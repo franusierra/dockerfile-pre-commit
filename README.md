@@ -8,3 +8,4 @@ This project add hooks to run [hadolint](https://github.com/hadolint/hadolint) w
   hooks:
   - id: dockerlint
 ````
+It is now able to run on ubuntu enviroments
