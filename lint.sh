@@ -9,7 +9,7 @@ export PATH=$PATH:/usr/local/bin
 if ! which hadolint &>/dev/null; then
     >&2 echo 'Hadolint command not found, trying to install...'
     if [ -z "$(command -v brew)" ]; then
-        if [ -z "$(command -v curl)"]; then
+        if [ -z "$(command -v curl)" ]; then
             >&2 echo "Can't install hadolint in this machine, proceding to exit"
             exit 1
         else
