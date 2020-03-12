@@ -14,9 +14,9 @@ if ! which hadolint &>/dev/null; then
             exit 1
         else
             >&2 echo "Installing using curl"
-            >&2 curl -o ~/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Darwin-x86_64
+            curl -o ~/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.5/hadolint-Darwin-x86_64
             chmod +x ~/hadolint
-            >&2 ~/hadolint "Dockerfile"
+            ~/hadolint "$@"
             exit 0
         fi
     else
@@ -26,4 +26,4 @@ if ! which hadolint &>/dev/null; then
 fi
 
  >&2 echo "Executing hadolint"
- >&2 hadolint "Dockerfile"
+ hadolint "$@"
